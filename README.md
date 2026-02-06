@@ -187,8 +187,6 @@ PART 1 - Swagger
  
 PART 2 - VISUALIZATION
 
-<img width="1082" height="676" alt="record_count" src="https://github.com/user-attachments/assets/3d172372-5a86-4231-9c03-3a8c1cf2ad33" />
-
 <img width="1504" height="683" alt="country" src="https://github.com/user-attachments/assets/c526f7cf-8241-4ce7-ae7f-acf4b22af153" />
 
 <img width="1750" height="656" alt="country_win_ratio" src="https://github.com/user-attachments/assets/e350821e-6246-4ac5-a930-802f3ae2cb6b" />
