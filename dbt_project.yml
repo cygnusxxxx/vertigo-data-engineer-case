@@ -1,0 +1,21 @@
+name: "vertigo_data_engineer_case"
+version: "1.0.0"
+config-version: 2
+
+profile: "vertigo_data_engineer_case"
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  vertigo_data_engineer_case:
+    +materialized: view

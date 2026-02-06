@@ -1,0 +1,1 @@
+{"_invocation_id": "793fd8a5-01cb-41a1-b8d1-4a16cc5286d6", "linked": {"0": {"name": "source.vertigo_data_engineer_case.raw.user_daily_metrics", "type": "source", "succ": [1]}, "1": {"name": "model.vertigo_data_engineer_case.daily_metrics", "type": "model"}}}
