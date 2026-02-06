@@ -1,4 +1,4 @@
-<img width="1859" height="1000" alt="swagger" src="https://github.com/user-attachments/assets/7629e3e1-7244-4ffd-8743-720a5672ed8e" /><img width="1859" height="1000" alt="swagger" src="https://github.com/user-attachments/assets/7629e3e1-7244-4ffd-8743-720a5672ed8e" />Vertigo – Data Engineer Case Study
+Vertigo – Data Engineer Case Study
 Overview
 
 This repository contains my solution for the Vertigo Data Engineer Case Study.
@@ -182,7 +182,19 @@ The final version of this project is tagged as v1.0 in GitHub Releases.
 
 SCREENSHOTS
 
+PART 1 - Swagger
+<img width="1859" height="1000" alt="swagger" src="https://github.com/user-attachments/assets/7629e3e1-7244-4ffd-8743-720a5672ed8e" /> 
  
+PART 2 - VISUALIZATION
+
+<img width="1082" height="676" alt="record_count" src="https://github.com/user-attachments/assets/3d172372-5a86-4231-9c03-3a8c1cf2ad33" />
+
+<img width="1504" height="683" alt="country" src="https://github.com/user-attachments/assets/c526f7cf-8241-4ce7-ae7f-acf4b22af153" />
+
+<img width="1750" height="656" alt="country_win_ratio" src="https://github.com/user-attachments/assets/e350821e-6246-4ac5-a930-802f3ae2cb6b" />
+
+<img width="1768" height="613" alt="country_defeat_winratio" src="https://github.com/user-attachments/assets/d6858d60-11cc-4ae2-a340-655665c3609b" />
+
 
 
 
