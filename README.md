@@ -1,23 +1,51 @@
 Vertigo – Data Engineer Case Study
 Overview
 
-This repository contains my solution for the Vertigo Data Engineer Case Study.
+This repository contains the solution for the Vertigo Games Data Engineer Case, consisting of two main parts:
+
+Part 1: Backend API for clan management, deployed on Google Cloud Run
+
+Part 2: Data modeling and visualization using BigQuery, dbt, and Looker Studio
 The objective of this project is to transform raw user-level daily gameplay and monetization data into an aggregated analytics-ready model using dbt and Google BigQuery, and prepare it for business reporting and visualization.
+ 
+This README documents the implementation steps, assumptions, and results.
 
+Part 1 – Clan Management API
 
-PART 1  
+To run and test Part 1 locally, please read the following:
+├── backend/
+│   └── README.md
+
+Description
+
+A lightweight REST API was developed to manage clans in a game backend.
+The API supports creating, listing, searching, and deleting clans.
+All responses are returned in JSON format.
+
+Each clan contains:
+
+id (UUID)
+
+name
+
+region
+
+created_at (UTC timestamp)
 
 Tech Stack
 
-Python (FastAPI)
+Backend framework: Python (FastAPI)
 
-Cloud SQL (PostgreSQL)
+API documentation: Swagger UI
 
-Google Cloud Run
+Database: Cloud SQL (PostgreSQL / MySQL)
 
-Docker
+Deployment: Google Cloud Run
+
+Containerization: Docker
 
 API Endpoints
+Method	Endpoint	Description
 
 POST /clans → create clan
 
@@ -27,27 +55,79 @@ GET /clans/search?name= → contains + min 3 char
 
 DELETE /clans/{id} → delete by UUID
 
-Database Schema
+ 
+Local Development & Testing
+To run and test Part 1 locally, please read the following:
+├── backend/
+│   └── README.md
 
-clans (
-  id UUID PRIMARY KEY,
-  name STRING NOT NULL,
-  region STRING,
-  created_at TIMESTAMP (UTC)
-)
+The project was developed and tested locally using VS Code.
 
+ 
 
-Deployment Flow
+Swagger UI
 
-API Dockerized
+The API exposes a Swagger UI for interactive testing.
 
-Image pushed to Google Artifact Registry
-
-Deployed to Cloud Run
-
-Cloud SQL connection established with environment variable
+http://localhost:8080/docs
 
 
+Using Swagger UI:
+
+POST requests were used to create clans
+
+GET requests were used to list and search clans
+
+DELETE requests were used to remove clans by ID
+
+Google Cloud Run Deployment
+
+The API was containerized using Docker and deployed to Google Cloud Run.
+
+Deployment steps:
+
+Build Docker image
+
+Push image to Google Artifact Registry
+
+Deploy service to Cloud Run
+
+Connect Cloud SQL instance to Cloud Run
+
+After deployment, the API became publicly accessible via the Cloud Run service URL.
+
+Example:
+
+https://clan-api-xxxxxx.a.run.app
+
+
+Swagger UI was also accessible via:
+
+https://clan-api-xxxxxx.a.run.app/docs
+
+Screenshots
+
+Screenshots are included to demonstrate:
+
+Swagger UI interface
+
+Successful POST / GET / DELETE requests
+
+Cloud Run service overview
+
+<img width="1859" height="1000" alt="swagger" src="https://github.com/user-attachments/assets/362a6764-dccf-4c22-8cd8-3d85bf6385a5" />
+ 
+
+
+Key Outcomes (Part 1)
+
+Fully functional REST API
+
+Cloud-native deployment using Google Cloud Run
+
+Interactive API testing via Swagger
+
+Clean, reproducible, and containerized setup
 
 
 PART 2
@@ -182,8 +262,6 @@ The final version of this project is tagged as v1.0 in GitHub Releases.
 
 SCREENSHOTS
 
-PART 1 - Swagger
-<img width="1859" height="1000" alt="swagger" src="https://github.com/user-attachments/assets/7629e3e1-7244-4ffd-8743-720a5672ed8e" /> 
  
 PART 2 - VISUALIZATION
 
