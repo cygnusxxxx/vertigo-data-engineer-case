@@ -1,14 +1,15 @@
-## Yerel ortamda çalıştırma
+## Running in a local environment
 
-### 1. Sanal ortam ve bağımlılıklar
+### 1. Virtual environment and dependencies
 
-Proje kökündeyken `backend` klasörüne geçin:
+While in the project root, navigate to the backend folder:
+
 
 ```bash
 cd backend
 ```
 
-Sanal ortam oluşturup etkinleştirin:
+Create and activate the virtual environment:
 
 ```bash
 # Windows
@@ -20,21 +21,21 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-Bağımlılıkları yükleyin:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. API'yi başlatma
+### 2. Starting the API
 
-Aynı `backend` klasöründeyken:
+While in the same backend folder:
 
 ```bash
 uvicorn main:app --reload --host 0.0.0.0 --port 8080
 ```
 
-- **Adres:** http://localhost:8080  
+- **Address:** http://localhost:8080  
 - **Swagger UI:** http://localhost:8080/docs  
 - **ReDoc:** http://localhost:8080/redoc  
 
@@ -42,9 +43,9 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8080
 
 ---
 
-## Docker ile çalıştırma
-
-`backend` klasöründen image oluşturup çalıştırın:
+## Running with Docker
+Create and run the image from the backend folder:
+ 
 
 ```bash
 cd backend
@@ -56,17 +57,17 @@ API http://localhost:8080 adresinde çalışır.
 
 ---
 
-## API uç noktaları
+## API endpoints
+All responses are in JSON format.
 
-Tüm yanıtlar JSON formatındadır.
-
-| Metot   | Endpoint              | Açıklama |
+| Method   | Endpoint              | Description |
 |--------|------------------------|----------|
-| GET    | `/`                   | Sağlık kontrolü (`{"status": "ok"}`) |
-| POST   | `/clans/`             | Klan oluştur. Query parametreleri: `name`, `region` |
-| GET    | `/clans/`             | Tüm klanları listele |
-| GET    | `/clans/search?q=...` | İsme göre ara (en az 3 karakter). Parametre: `q` |
-| DELETE | `/clans/{id}`         | UUID ile klan sil |
+| GET    | `/`                   | Health check (`{"status": "ok"}`) |
+| POST   | `/clans/`             | Create a clan. Query parameters: `name`, `region` |
+| GET    | `/clans/`             | List all clans |
+| GET    | `/clans/search?q=...` | Search by name (at least 3 characters). Parameter: `q` |
+| DELETE | `/clans/{id}`         | Delete clan by UUID |
+
 
 
 
