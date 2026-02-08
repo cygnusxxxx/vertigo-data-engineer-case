@@ -1,5 +1,5 @@
-Vertigo – Data Engineer Case Study
-Overview
+# Vertigo – Data Engineer Case Study
+## Overview
 
 This repository contains the solution for the Vertigo Games Data Engineer Case, consisting of two main parts:
 
@@ -10,13 +10,13 @@ The objective of this project is to transform raw user-level daily gameplay and 
  
 This README documents the implementation steps, assumptions, and results.
 
-Part 1 – Clan Management API
+## Part 1 – Clan Management API
 
 To run and test Part 1 locally, please read the following:
 ├── backend/
 │   └── README.md
 
-Description
+## Description
 
 A lightweight REST API was developed to manage clans in a game backend.
 The API supports creating, listing, searching, and deleting clans.
@@ -32,7 +32,7 @@ region
 
 created_at (UTC timestamp)
 
-Tech Stack
+## Tech Stack
 
 Backend framework: Python (FastAPI)
 
@@ -44,7 +44,8 @@ Deployment: Google Cloud Run
 
 Containerization: Docker
 
-API Endpoints
+## API Endpoints
+
 Method	Endpoint	Description
 
 POST /clans → create clan
@@ -56,7 +57,7 @@ GET /clans/search?name= → contains + min 3 char
 DELETE /clans/{id} → delete by UUID
 
  
-Local Development & Testing
+## Local Development & Testing
 To run and test Part 1 locally, please read the following:
 ├── backend/
 │   └── README.md
@@ -65,7 +66,7 @@ The project was developed and tested locally using VS Code.
 
  
 
-Swagger UI
+## Swagger UI
 
 The API exposes a Swagger UI for interactive testing.
 
@@ -84,7 +85,7 @@ Google Cloud Run Deployment
 
 The API was containerized using Docker and deployed to Google Cloud Run.
 
-Deployment steps:
+## Deployment steps:
 
 Build Docker image
 
@@ -105,7 +106,7 @@ Swagger UI was also accessible via:
 
 https://clan-api-xxxxxx.a.run.app/docs
 
-Screenshots
+## Screenshots
 
 Screenshots are included to demonstrate:
 
@@ -119,7 +120,7 @@ Cloud Run service overview
  
 
 
-Key Outcomes (Part 1)
+## Key Outcomes (Part 1)
 
 Fully functional REST API
 
@@ -130,9 +131,9 @@ Interactive API testing via Swagger
 Clean, reproducible, and containerized setup
 
 
-PART 2
+## PART 2
 
-Tech Stack
+## Tech Stack
 
 Google BigQuery – Data warehouse
 
@@ -144,7 +145,7 @@ GitHub – Version control
 
 Looker Studio – Visualization (covered in Part 2)
 
-Project Structure
+## Project Structure
 vertigo-data-engineer-case/
 ├── models/
 │   └── daily_metrics.sql
@@ -154,7 +155,7 @@ vertigo-data-engineer-case/
 ├── Dockerfile
 ├── README.md
 
-Data Source
+## Data Source
 
 Before modeling, basic data quality and anomaly checks were performed on the raw dataset.
 These included duplicate user-day validation, null checks on key dimensions, negative value inspections on revenue and gameplay metrics, and logical consistency checks between match outcomes.
@@ -180,7 +181,7 @@ technical metrics (server_connection_error)
 
 These files were uploaded to BigQuery into a raw dataset and exposed to dbt via a source configuration.
 
-Data Quality & Initial Checks
+## Data Quality & Initial Checks
 
 Before modeling, basic sanity and quality checks were performed directly on the raw data in BigQuery, including:
 
@@ -194,7 +195,7 @@ Duplicate user-day records checked
 
 These checks ensured the dataset was suitable for aggregation and business reporting.
 
-DBT Model – daily_metrics
+## DBT Model – daily_metrics
 
 A single dbt model named daily_metrics was created to aggregate metrics by:
 
@@ -221,7 +222,7 @@ server_error_per_dau	server_connection_error / dau
 
 The model is implemented as a view in BigQuery and serves as the foundation for downstream analytics and dashboards.
 
-Dockerization
+## Dockerization
 
 A Dockerfile is provided to ensure the dbt project is reproducible and environment-independent.
 
@@ -237,7 +238,7 @@ How to Run (Local)
 dbt debug
 dbt run
 
-Visualization
+## Visualization
 
 A business-facing dashboard was built using Looker Studio, leveraging the daily_metrics model as the primary data source.
 
@@ -245,7 +246,7 @@ Screenshots and key insights are included below.
 
 (Added in the next section)
 
-Assumptions
+## Assumptions
 
 Each user appears at most once per day
 
@@ -255,12 +256,12 @@ Missing values in metrics are treated as zero where applicable
 
 dbt models are intended for analytics/reporting, not transactional use
 
-Versioning
+## Versioning
 
 The final version of this project is tagged as v1.0 in GitHub Releases.
 
 
-SCREENSHOTS
+## SCREENSHOTS
 
  
 PART 2 - VISUALIZATION
